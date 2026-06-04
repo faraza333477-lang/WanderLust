@@ -1,0 +1,114 @@
+<% layout("/layouts/boilerplate") %>
+<style>
+   #filters{
+    display: flex;
+    flex-wrap: wrap;
+   }
+   .filter{
+    text-align: center;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    opacity: 0.7;
+   }
+   .filter:hover{
+    opacity: 1;
+    cursor: pointer;
+    color:rgb(35, 224, 14) ;
+   }
+   
+   .addbnb{
+    margin-top: 2rem;
+    margin-left: 3rem;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: red;
+    border:solid rgb(157, 7, 7);
+    border-radius: 10px;
+   }
+   .addbnb:hover{
+    color: rgb(35, 224, 14) ;
+    border: solid rgb(35, 224, 14) ;
+   }
+</style>
+  <body>
+    
+    <div id="filters">
+        <div class="filter">
+          <div><i class="fa-solid fa-fire"></i></div>
+          <p>Trending</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-solid fa-bed"></i></div>
+          <p>Room</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-solid fa-mountain-city"></i></div>
+          <p>Iconic Cities</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-regular fa-house"></i></div>
+          <p>Cabins</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-solid fa-person-swimming"></i></div>
+          <p>Pools</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-solid fa-mountain"></i></div>
+          <p>Mountains</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-solid fa-bridge"></i></div>
+          <p>Farms</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-solid fa-house-flag"></i></div>
+          <p>Camping</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-solid fa-building"></i></div>
+          <p>Villas</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-solid fa-hotel"></i></div>
+          <p>Hotels</p>
+        </div> 
+        <div class="filter">
+          <div><i class="fa-solid fa-bed"></i></div>
+          <p>Room</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-solid fa-mountain-city"></i></div>
+          <p>Iconic Cities</p>
+        </div>
+        <div class="filter">
+          <div><i class="fa-regular fa-house"></i></div>
+          <p>Cabins</p>
+        </div> 
+        <div class="filter">
+          <div><i class="fa-solid fa-mountain"></i></div>
+          <p>Mountains</p>
+        </div> 
+        <div class="addbnb">
+          <a class="nav-link" href="/listings/new"> <b>Airbnb your home</b> </a>
+        </div>      
+    </div>
+    <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1 mt-3">
+      <% for(let Listings of all_listings){ %>
+        <a class="card-a" href="/listings/<%= Listings._id %>">
+          <div class="card_listing col">
+            <img src="<%=Listings.image.url%>" class="card-img-top " alt="Listings_image" style="height:20rem">
+            <div class="card-body">
+              <p class="card-text">
+                <b>
+                  <%=Listings.title%>
+                </b><br>
+                RS:<%=Listings.price.toLocaleString("en-IN")%> /Night
+              </p>
+            </div>
+          </div>
+        </a>
+        <% } %>
+    </div>
+  </body>
