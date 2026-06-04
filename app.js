@@ -5,6 +5,7 @@ const app = express();
 const mongoose = require("mongoose");
 const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 const path = require("path");
+const PORT = process.env.PORT || 8080;
 //const { render } = require("ejs");
 const methodOverride = require("method-override");
 const ejsmate = require("ejs-mate");
@@ -83,6 +84,6 @@ app.use((err, req, res, next) => {
 })
 
 
-app.listen(8080, () => {
-    console.log("server is running")
-})
+app.listen(PORT, () => {
+  console.log(`Server running on ${PORT}`);
+});
