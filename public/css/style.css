@@ -87,3 +87,63 @@ a:hover{
    color: rgb(35, 224, 14) !important;
 }
 /* review button */
+/* ================= MOBILE FIXES ================= */
+
+@media (max-width: 768px) {
+
+  /* hide PNG icons below navbar */
+  .filters,
+  #filters,
+  .filter,
+  .filter-container,
+  .icon-section,
+  .icons-section,
+  .category-icons {
+    display: none !important;
+  }
+
+  /* listing cards responsive */
+  .row {
+    margin: 0 !important;
+    padding: 0 12px !important;
+  }
+
+  .listing-card,
+  .card {
+    width: 100% !important;
+    margin: 0 auto 20px auto !important;
+    border-radius: 16px !important;
+  }
+
+  .card-img-top {
+    width: 100% !important;
+    height: 230px !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+  }
+
+  .card-body {
+    padding: 10px 4px !important;
+  }
+
+  .card-text {
+    font-size: 0.95rem !important;
+  }
+
+  .listing-link {
+    width: 100% !important;
+    display: block !important;
+    text-decoration: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-img-top {
+    height: 200px !important;
+  }
+
+  .listing-card,
+  .card {
+    margin-bottom: 18px !important;
+  }
+}
